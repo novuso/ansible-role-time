@@ -1,0 +1,6 @@
+---
+- hosts: all
+  vars:
+  - time_system_timezone: "America/Chicago"
+  roles:
+  - ansible-role-time

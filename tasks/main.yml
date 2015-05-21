@@ -1,0 +1,31 @@
+---
+- name: "system timezone"
+  sudo: yes
+  file:
+    src: "/usr/share/zoneinfo/{{ time_system_timezone }}"
+    dest: "/etc/localtime"
+    state: link
+    force: yes
+
+- name: "ntp installed"
+  sudo: yes
+  apt:
+    name: "ntp"
+    state: present
+    update_cache: yes
+    cache_valid_time: 3600
+
+- name: "ntp enabled"
+  sudo: yes
+  service:
+    name: "ntp"
+    enabled: yes
+  when: time_ntp_enabled
+
+- name: "ntp disabled"
+  sudo: yes
+  service:
+    name: "ntp"
+    state: stopped
+    enabled: no
+  when: not time_ntp_enabled
