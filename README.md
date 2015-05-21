@@ -1,6 +1,8 @@
 # Ansible Role: Time
 
+[![Ansible Galaxy](http://img.shields.io/badge/galaxy-novuso.time-000000.svg)](https://galaxy.ansible.com/list#/roles/3869)
 [![MIT License](http://img.shields.io/badge/license-MIT-003399.svg)](http://opensource.org/licenses/MIT)
+[![Build Status](https://travis-ci.org/novuso/ansible-role-time.svg)](https://travis-ci.org/novuso/ansible-role-time)
 
 An Ansible role that manages timezone and NTP on Ubuntu 14.04
 
